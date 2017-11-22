@@ -36,7 +36,7 @@ class Ball {
     if ( (x+radius > width) || (x - radius < 0) ) {
       dx *= -1;
       hit = hit+1;
-      println();
+        println();
     }
     if ( (y+radius > height) || (y - radius < 0) ) {
       dy *= -1;
@@ -47,19 +47,19 @@ class Ball {
   
   
   
-  void checkIfCollidingWith(Ball otherBall) {
-    float distanceBetweenBalls = dist(x, y, otherBall.x, otherBall.y);
-    float sumOfRadii = radius + otherBall.radius;
+  void checkIfCollidingWith(Paddle firstPaddle) {
+    float distanceBetweenObjects = dist(x, y, firstPaddle.x, firstPaddle.y);
+    float block = radius + (firstPaddle.paddleHeight + firstPaddle.paddleWidth);
     
-    if (distanceBetweenBalls <= sumOfRadii) { //collision!
+    if (distanceBetweenObjects <= block) { //collision!
       float tempdx = dx;
       float tempdy = dy;
       
-      dx = otherBall.dx;
-      dy = otherBall.dy;
+      dx = firstPaddle.x;
+      dy = firstPaddle.y;
       
-      otherBall.dx = tempdx;
-      otherBall.dy = tempdy;
+      firstPaddle.x = tempdx;
+      firstPaddle.y = tempdy;
     }
     
   }
