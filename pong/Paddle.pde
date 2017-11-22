@@ -17,7 +17,7 @@ class Paddle {
     y = _y;
     paddleHeight = _paddleHeight;
     paddleWidth = _paddleWidth;
-    dyL = Float _dyL;
+    dyL = _dyL;
     moveUp = false;
     moveDown = false;
   }
