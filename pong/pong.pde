@@ -19,7 +19,8 @@ void draw() {
   p1.moveLeft();
   p2.moveRight();
   
-  //b1.checkIfCollidingWith(p1);
+  b1.checkIfCollidingWith(p1);
+  b1.checkIfCollidingWith(p2);
   
   b1.display();
   //b2.display();
