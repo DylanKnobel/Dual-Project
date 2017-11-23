@@ -40,7 +40,7 @@ class Ball {
       dy *= -1;
     }
   }
-
+  
 
 
 
