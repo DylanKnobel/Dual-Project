@@ -31,32 +31,64 @@ class Paddle {
   void moveLeft() {
     if (keyPressed) {
       if (key == 'w') {
-        y -= (dyL);
+        if (y == 0) {
+          y -= 0;
+        } else {
+          y -= (dyL);
+        }
       }
       if (key == 's') {
-        y += (dyL);
+        if (y == height-paddleWidth) {
+          y+=0;
+        } else {
+          y += (dyL);
+        }
       }
       if (key == 'a') {
-        y -= (dyL);
+        if (y == 0) {
+          y -= 0;
+        } else {
+          y -= (dyL);
+        }
       }
       if (key == 'd') {
-        y += (dyL);
+        if (y == height-paddleWidth) {
+          y+=0;
+        } else {
+          y += (dyL);
+        }
       }
     }
   }
   void moveRight() {
     if (keyPressed) {
       if (keyCode == UP) {
-        y -= (dyR);
+       if (y == 0) {
+          y -= 0;
+        } else {
+          y -= (dyR);
+        }
       }
       if (keyCode == DOWN) {
-        y += (dyR);
+        if (y == height-paddleWidth) {
+          y+=0;
+        } else {
+          y += (dyR);
+        }
       }
       if (keyCode == LEFT) {
-        y += (dyR);
+        if (y == height-paddleWidth) {
+          y+=0;
+        } else {
+          y += (dyR);
+        }
       }
       if (keyCode == RIGHT) {
-        y -= (dyR);
+        if (y == 0) {
+          y -= 0;
+        } else {
+          y -= (dyR);
+        }
       }
     }
   }
