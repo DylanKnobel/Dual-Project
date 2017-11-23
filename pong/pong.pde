@@ -16,8 +16,8 @@ void draw() {
   
   b1.move();
   //b2.move();
-  p1.moveLeft();
-  p2.moveRight();
+  //p1.moveLeft();
+  //p2.moveRight();
   
   //b1.checkIfCollidingWith(p1);
   
@@ -26,7 +26,13 @@ void draw() {
   p1.display();
   p2.display();
 }
+void keyPressed(){
+ p1.handleKeyPressed(); 
+}
 
+void keyReleased(){
+  p1.handleKeyReleased();
+}
 
 void startPlaying() {
   
