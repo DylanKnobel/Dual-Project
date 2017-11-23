@@ -5,7 +5,7 @@ Paddle p2;
 void setup() {
   //size(800, 800);
   fullScreen();
-  b1 = new Ball(width/2, height/2, 10, 3, 20);
+  b1 = new Ball(width/2, height/2, 10, 2, 20);
   p1 = new Paddle(75, height/2, 25, 90,5);
   p2 = new Paddle(width-75, height/2, 25, 90,5.0);
  //b2 = new Ball(100, 100, 2, 3, 50);
@@ -19,7 +19,8 @@ void draw() {
   //p1.moveLeft();
   //p2.moveRight();
   
-  //b1.checkIfCollidingWith(p1);
+  b1.checkIfCollidingWith(p1);
+  b1.checkIfCollidingWith(p2);
   
   b1.display();
   //b2.display();
