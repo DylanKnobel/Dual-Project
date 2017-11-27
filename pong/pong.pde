@@ -1,6 +1,8 @@
 Ball b1;
 Paddle p1;
 Paddle p2;
+ToggleButton button1;
+
 
 void setup() {
   //size(800, 800);
@@ -14,11 +16,14 @@ void setup() {
   p1 = new Paddle(75, height/2, 25, 90, 5);
   p2 = new Paddle(width-75, height/2, 25, 90, 5.0);
   //b2 = new Ball(100, 100, 2, 3, 50);
+  button1 = new ToggleButton(100, 100, 50, 50);
+
 }
 
 
 void draw() {
   background(0);
+  button1.display();
 
   b1.move();
   //b2.move();
@@ -43,5 +48,6 @@ void keyReleased() {
   p2.handleKeyReleased();
 }
 
-void startPlaying() {
+void mouseClicked() {
+  button1.checkIfClicked();
 }
