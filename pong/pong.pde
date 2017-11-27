@@ -2,6 +2,7 @@ Ball b1;
 Paddle p1;
 Paddle p2;
 ToggleButton button1;
+int state;
 
 
 void setup() {
@@ -17,6 +18,7 @@ void setup() {
   p2 = new Paddle(width-75, height/2, 25, 90, 5.0);
   //b2 = new Ball(100, 100, 2, 3, 50);
   button1 = new ToggleButton(100, 100, 50, 50);
+  state = 0;
 
 }
 

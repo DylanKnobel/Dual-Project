@@ -19,6 +19,7 @@ class Ball {
   //behaviour(s)
   void display() {
     fill(255);
+    noStroke();
     ellipseMode(CENTER);
     ellipse(x, y, radius*2, radius*2);
   }
