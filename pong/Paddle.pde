@@ -31,23 +31,30 @@ class Paddle {
 
   void move() {
     if (moveUp) {
-      y-= dyL;
+      if (y >= 0 +45) {
+        y-= dyL;
+      }
     }
     if (moveDown) {
-      y += dyL;
+      if (y<=height-45) {
+        y += dyL;
+      }
     }
     if (moveUp2) {
-      y -= dyR;
+      if (y >= 0+45) {
+        y -= dyR;
+      }
     }
     if (moveDown2) {
-      y +=dyR;
+      if (y<=height-45) {
+        y +=dyR;
+      }
     }
   }
   void handleKeyPressed() {
     if (key == 'w') {
-      if (y >= 0) {
-        moveUp = true;
-      }
+
+      moveUp = true;
     }
     if (key == 's' ) {
       if (y<=height) {
@@ -55,34 +62,22 @@ class Paddle {
       }
     }
     if (key == 'a' ) {
-      if (y >= 0) {
-        moveUp = true;
-      }
+      moveUp = true;
     }
     if (key == 'd' ) {
-      if (y<=height) {
-        moveDown =true;
-      }
+      moveDown =true;
     }
     if (keyCode == UP ) {
-      if (y>=0) {
-        moveUp2 = true;
-      }
+      moveUp2 = true;
     }
     if (keyCode == DOWN ) {
-      if (y<=height) {
-        moveDown2 =true;
-      }
+      moveDown2 =true;
     }
     if (keyCode == LEFT ) {
-      if (y<=height) {
-        moveDown2 =true;
-      }
+      moveDown2 =true;
     }
     if (keyCode == RIGHT ) {
-      if (y>=0) {
-        moveUp2 = true;
-      }
+      moveUp2 = true;
     }
   }
   void handleKeyReleased() {
