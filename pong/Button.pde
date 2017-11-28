@@ -2,7 +2,6 @@ class ToggleButton {
   //data
   float x, y, buttonWidth, buttonHeight;
   float leftSide, rightSide, top, bottom;
-  boolean isSelected;
 
   //constructor(s)
   ToggleButton(float _x, float _y, float _width, float _height) {

@@ -3,6 +3,7 @@ Paddle p1;
 Paddle p2;
 ToggleButton button1;
 int state;
+boolean isSelected;
 
 
 void setup() {
@@ -17,28 +18,34 @@ void setup() {
   p1 = new Paddle(75, height/2, 25, 90, 5);
   p2 = new Paddle(width-75, height/2, 25, 90, 5.0);
   //b2 = new Ball(100, 100, 2, 3, 50);
-  button1 = new ToggleButton(100, 100, 50, 50);
+  button1 = new ToggleButton(width/2-150, height/2-75, 300, 150);
   state = 0;
-
 }
 
 
 void draw() {
-  background(0);
-  button1.display();
+  if (state == 0) {
+    background(255);
+    button1.display();
+  }
+  if (state == 1) {
+    background(0);
+    b1.move();
+    //b2.move();
+    p1.move();
+    p2.move();
 
-  b1.move();
-  //b2.move();
-  p1.move();
-  p2.move();
+    b1.checkIfCollidingWith(p1);
+    b1.checkIfCollidingWith(p2);
 
-  b1.checkIfCollidingWith(p1);
-  b1.checkIfCollidingWith(p2);
-
-  b1.display();
-  //b2.display();
-  p1.display();
-  p2.display();
+    b1.display();
+    //b2.display();
+    p1.display();
+    p2.display();
+  }
+  if(isSelected == true){
+    state = 1;
+  }
 }
 void keyPressed() {
   p1.handleKeyPressed();
