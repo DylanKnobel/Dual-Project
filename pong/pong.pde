@@ -44,6 +44,7 @@ void draw() {
 
   }
   if(state == 2){
+     background(0);
     b1.move();
     
     p1.move();
