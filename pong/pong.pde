@@ -2,7 +2,8 @@ Ball b1;
 Paddle p1;
 Paddle p2;
 ToggleButton button1;
-int state;
+Timer start;
+int state, moveState;
 boolean isSelected;
 
 
@@ -17,7 +18,7 @@ void setup() {
   }
   p1 = new Paddle(75, height/2, 25, 90, 5);
   p2 = new Paddle(width-75, height/2, 25, 90, 5.0);
-  //b2 = new Ball(100, 100, 2, 3, 50);
+  start = new Timer(3000);
   button1 = new ToggleButton(width/2-150, height/2-75, 300, 150);
   state = 0;
 }
@@ -38,6 +39,9 @@ void draw() {
     
     p1.display();
     p2.display();
+    start.begin();
+    state = 2;
+
   }
   if(state == 2){
     b1.move();
