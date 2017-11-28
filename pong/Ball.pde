@@ -25,6 +25,7 @@ class Ball {
   }
 
   void move() {
+    
     x += dx;
     y += dy;
 

@@ -30,8 +30,18 @@ void draw() {
   }
   if (state == 1) {
     background(0);
+
+    b1.checkIfCollidingWith(p1);
+    b1.checkIfCollidingWith(p2);
+
+    b1.display();
+    
+    p1.display();
+    p2.display();
+  }
+  if(state == 2){
     b1.move();
-    //b2.move();
+    
     p1.move();
     p2.move();
 
@@ -39,12 +49,14 @@ void draw() {
     b1.checkIfCollidingWith(p2);
 
     b1.display();
-    //b2.display();
+   
     p1.display();
     p2.display();
+    
   }
   if(isSelected == true){
     state = 1;
+    
   }
 }
 void keyPressed() {
