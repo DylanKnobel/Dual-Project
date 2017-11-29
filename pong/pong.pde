@@ -27,7 +27,11 @@ void setup() {
 void draw() {
   if (state == 0) {
     background(255);
+    fill(0, 102, 153);
+    textSize(32);
     button1.display();
+    fill(0);
+    text("Press button to start",width/2-150,height/2-100);
   }
   if (state == 1) {
     background(0);
