@@ -2,6 +2,7 @@ class Ball {
   //data
   float x, y, dx, dy, radius;
   int hit;
+  Timer startTimer;
 
 
 
@@ -12,7 +13,8 @@ class Ball {
     dx = _dx;
     dy = _dy;
     radius = _radius;
-
+    
+    startTimer = new Timer(3000);
     hit = 0;
   }
 
@@ -25,7 +27,7 @@ class Ball {
   }
 
   void move() {
-    
+    startTimer.begin();
     x += dx;
     y += dy;
 

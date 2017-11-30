@@ -33,22 +33,23 @@ void draw() {
     fill(0);
     text("Press button to start",width/2-150,height/2-100);
   }
-  if (state == 1) {
-    background(0);
+  //if (state == 1) {
+  //  background(0);
 
-    b1.checkIfCollidingWith(p1);
-    b1.checkIfCollidingWith(p2);
+  //  b1.checkIfCollidingWith(p1);
+  //  b1.checkIfCollidingWith(p2);
 
-    b1.display();
+  //  b1.display();
     
-    p1.display();
-    p2.display();
-    start.begin();
-    state = 2;
+  //  p1.display();
+  //  p2.display();
+  //  start.begin();
+  //  state = 2;
 
-  }
-  if(state == 2){
+  //}
+  if(state == 1){
      background(0);
+    start.begin();
     b1.move();
     
     p1.move();
