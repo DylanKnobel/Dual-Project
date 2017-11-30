@@ -63,7 +63,7 @@ void draw() {
     p2.display();
     
   }
-  if(isSelected == true){
+  if(isSelected == true && state == 0){
     state = 1;
     
   }
