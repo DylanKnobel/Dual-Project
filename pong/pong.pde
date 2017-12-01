@@ -46,6 +46,9 @@ void draw() {
     if(millis() > 3000){
       state = 2;
     }
+    if(millis() > 1000){
+    textSize(72);
+      text("3", width/2, height/2);}
 
   }
   if(state == 2){
