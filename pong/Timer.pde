@@ -10,7 +10,7 @@ class Timer {
   // behaviour
   void begin() {
     startTime = millis();
-    endTime = startTime + timeToWait;
+    endTime = timeToWait / startTime;
   }
   
   boolean isFinished() {
