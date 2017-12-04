@@ -13,7 +13,7 @@ class Ball {
     dx = _dx;
     dy = _dy;
     radius = _radius;
-    
+
     startTimer = new Timer(3000);
     hit = 0;
   }
@@ -36,6 +36,8 @@ class Ball {
 
   void bounceIfRequired() {
     if ( (x+radius > width) || (x - radius < 0) ) {
+      x = width/2;
+      y = height/2;
       dx *= -1;
       hit = hit+1;
       println();
@@ -44,7 +46,7 @@ class Ball {
       dy *= -1;
     }
   }
-  
+
 
 
 
