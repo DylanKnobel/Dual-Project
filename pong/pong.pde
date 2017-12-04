@@ -32,6 +32,9 @@ void draw() {
     button1.display();
     fill(0);
     text("Press button to start", width/2-150, height/2-100);
+    fill(255);
+    text(b1.hitR, 50,50);
+    text(b1.hitL, width-50,50);
   }
   if (state == 1) {
     background(0);

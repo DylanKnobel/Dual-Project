@@ -1,7 +1,7 @@
 class Ball {
   //data
   float x, y, dx, dy, radius;
-  int hit;
+  int hitL, hitR;
   Timer startTimer;
 
 
@@ -15,7 +15,9 @@ class Ball {
     radius = _radius;
 
     startTimer = new Timer(3000);
-    hit = 0;
+    hitL = 0;
+    hitR = 0;
+
   }
 
   //behaviour(s)
@@ -24,6 +26,9 @@ class Ball {
     noStroke();
     ellipseMode(CENTER);
     ellipse(x, y, radius*2, radius*2);
+    fill(255);
+    text(hitL, 50,60);
+    text(hitR, width-100,60);
   }
 
   void move() {
@@ -35,12 +40,17 @@ class Ball {
   }
 
   void bounceIfRequired() {
-    if ( (x+radius > width) || (x - radius < 0) ) {
+    if (x - radius < 0)  {
       x = width/2;
       y = height/2;
       dx *= -1;
-      hit = hit+1;
-      println();
+      hitR = hitR+1;
+    }
+    if (x+radius > width){
+      x = width/2;
+      y = height/2;
+      dx *= -1;
+      hitL = hitL+1;
     }
     if ( (y+radius > height) || (y - radius < 0) ) {
       dy *= -1;
@@ -58,7 +68,7 @@ class Ball {
     if (distanceBetweenObjects <= block) { //collision!
       if ( (y+radius >= firstPaddle.paddleHeight) || (y - radius < 0) ) {
         dx *= -1;
-        hit = hit+1;
+        //hit = hit+1;
       }
     }
   }
