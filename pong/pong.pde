@@ -31,7 +31,7 @@ void draw() {
     textSize(32);
     button1.display();
     fill(0);
-    text("Press button to start",width/2-150,height/2-100);
+    text("Press button to start", width/2-150, height/2-100);
   }
   if (state == 1) {
     background(0);
@@ -40,38 +40,41 @@ void draw() {
     b1.checkIfCollidingWith(p2);
 
     b1.display();
-    
+
     p1.display();
     p2.display();
-    if(millis() > 3000){
+    if (millis() > 3000) {
       state = 2;
     }
-    if(millis() > 1000){
-    textSize(72);
+    if (millis() > 1000) {
+      textSize(72);
+      text("1", width/2, height/2);
+    } else if (millis() > 2000) {
+      text("2", width/2, height/2);
+    }else if (millis() > 3000) {
       text("3", width/2, height/2);}
-
   }
-  if(state == 2){
-     background(0);
-    start.begin();
-    b1.move();
-    
-    p1.move();
-    p2.move();
 
-    b1.checkIfCollidingWith(p1);
-    b1.checkIfCollidingWith(p2);
 
-    b1.display();
-   
-    p1.display();
-    p2.display();
-    
-  }
-  if(isSelected == true && state == 0){
-    state = 1;
-    
-  }
+if (state == 2) {
+  background(0);
+  start.begin();
+  b1.move();
+
+  p1.move();
+  p2.move();
+
+  b1.checkIfCollidingWith(p1);
+  b1.checkIfCollidingWith(p2);
+
+  b1.display();
+
+  p1.display();
+  p2.display();
+}
+if (isSelected == true && state == 0) {
+  state = 1;
+}
 }
 void keyPressed() {
   p1.handleKeyPressed();
