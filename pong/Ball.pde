@@ -1,3 +1,5 @@
+//This code WAS adapted from the "Ball With Collision Detection OOP" Code
+//This Object creates the ball for the game 
 class Ball {
   //data
   float x, y, dx, dy, radius;
@@ -13,6 +15,7 @@ class Ball {
     dy = _dy;
     radius = _radius;
 
+    //These are used to check which side of the screen the ball hits
     hitL = 0;
     hitR = 0;
   }
@@ -27,14 +30,14 @@ class Ball {
     leftScore += hitL;
   }
 
-  void move() {
+  void move() { //basic movement of the ball
     x += dx;
     y += dy;
 
     bounceIfRequired();
   }
 
-  void bounceIfRequired() {
+  void bounceIfRequired() { //Bounces the Ball off of the Top and Bottom of the screen.
     int s = int(random(1, 3));
     if (x - radius < 0) {
       x = width/2;
@@ -68,7 +71,7 @@ class Ball {
 
 
 
-  void checkIfCollidingWith(Paddle firstPaddle) {
+  void checkIfCollidingWith(Paddle firstPaddle) { //Checks to see if the Ball is Colliding with the paddle
     float distanceBetweenObjects = dist(x, y, firstPaddle.x, firstPaddle.y);
     float block = radius + (firstPaddle.paddleHeight);
 

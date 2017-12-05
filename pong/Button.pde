@@ -1,4 +1,5 @@
-class ToggleButton {
+// The Button used to start the Game of Pong at the very start
+class ToggleButton { 
   //data
   float x, y, buttonWidth, buttonHeight;
   float leftSide, rightSide, top, bottom;
@@ -18,7 +19,7 @@ class ToggleButton {
   }
 
   //behaviour
-  void display() {
+  void display() { //Displays the button
     if (isSelected) {
       fill(255, 0, 0);
     } else {
@@ -27,13 +28,13 @@ class ToggleButton {
     rect(x, y, buttonWidth, buttonHeight);
   }
 
-  void checkIfClicked() {
+  void checkIfClicked() { // Checks to see if the mouse has clicked on the button
     if (mouseIsOnButton()) {
       isSelected = !isSelected;
     }
   }
 
-  boolean mouseIsOnButton() {
+  boolean mouseIsOnButton() { // Checks to see if the mouse is over the button
     return ((mouseX > leftSide) &&
       (mouseX < rightSide) &&
       (mouseY > top) &&

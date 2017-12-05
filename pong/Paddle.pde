@@ -1,8 +1,11 @@
-class Paddle {
+// Creates the two controlable paddles
+class Paddle { 
   //data
   float x, y, paddleWidth, paddleHeight, dyL, dyR;
   boolean moveUp, moveDown, moveUp2, moveDown2;
   //constructors
+  
+  //Creates the right paddle
   Paddle(float _x, float _y, float _paddleHeight, float _paddleWidth, float _dyR) {
     x = _x;
     y = _y;
@@ -12,6 +15,8 @@ class Paddle {
     moveUp = false;
     moveDown = false;
   }
+  
+  //Creates the left paddle
   Paddle(float _x, float _y, float _paddleHeight, float _paddleWidth, int _dyL) {
     x = _x;
     y = _y;
@@ -29,7 +34,8 @@ class Paddle {
     rectMode(CENTER);
     rect(x, y, paddleHeight, paddleWidth);
   }
-
+  
+  //This section cortrols the key cordinated movement of the paddles
   void move() {
     if (moveUp) {
       if (y >= 0 +45) {
