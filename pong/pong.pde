@@ -8,16 +8,15 @@ boolean isSelected;
 
 
 void setup() {
-  //size(800, 800);
   fullScreen();
   int s = int(random(1, 3));
   if (s == 1) {
-    b1 = new Ball(width/2, height/2, 10, 2, 20);
+    b1 = new Ball(width/2, height/2, random(5,15), random(2,6), 20);
   } else {
-    b1 = new Ball(width/2, height/2, -10, -2, 20);
+    b1 = new Ball(width/2, height/2, random(-5,-15), random(-2,-6), 20);
   }
-  p1 = new Paddle(75, height/2, 25, 90, 5);
-  p2 = new Paddle(width-75, height/2, 25, 90, 5.0);
+  p1 = new Paddle(75, height/2, 25, 90, 10);
+  p2 = new Paddle(width-75, height/2, 25, 90, 10.0);
   start = new Timer(3000);
   button1 = new ToggleButton(width/2-150, height/2-75, 300, 150);
   state = 0;
