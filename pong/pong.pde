@@ -3,17 +3,18 @@ Paddle p1;
 Paddle p2;
 ToggleButton button1;
 Timer start;
-int state, moveState;
+int state, moveState, leftScore, rightScore;
 boolean isSelected;
+
 
 
 void setup() {
   fullScreen();
   int s = int(random(1, 3));
   if (s == 1) {
-    b1 = new Ball(width/2, height/2, random(5,15), random(2,6), 20);
+    b1 = new Ball(width/2, height/2, random(5, 15), random(2, 6), 20);
   } else {
-    b1 = new Ball(width/2, height/2, random(-5,-15), random(-2,-6), 20);
+    b1 = new Ball(width/2, height/2, random(-5, -15), random(-2, -6), 20);
   }
   p1 = new Paddle(75, height/2, 25, 90, 10);
   p2 = new Paddle(width-75, height/2, 25, 90, 10.0);
@@ -31,9 +32,6 @@ void draw() {
     button1.display();
     fill(0);
     text("Press button to start", width/2-150, height/2-100);
-    fill(255);
-    text(b1.hitR, 50,50);
-    text(b1.hitL, width-50,50);
   }
   if (state == 1) {
     background(0);
@@ -53,30 +51,33 @@ void draw() {
       text("1", width/2, height/2);
     } else if (millis() > 2000) {
       text("2", width/2, height/2);
-    }else if (millis() > 3000) {
-      text("3", width/2, height/2);}
+    } else if (millis() > 3000) {
+      text("3", width/2, height/2);
+    }
   }
 
 
-if (state == 2) {
-  background(0);
-  start.begin();
-  b1.move();
+  if (state == 2) {
+    background(0);
+    text(leftScore, 50, 60);
+    text(rightScore, width-100, 60);
+    start.begin();
+    b1.move();
 
-  p1.move();
-  p2.move();
+    p1.move();
+    p2.move();
 
-  b1.checkIfCollidingWith(p1);
-  b1.checkIfCollidingWith(p2);
+    b1.checkIfCollidingWith(p1);
+    b1.checkIfCollidingWith(p2);
 
-  b1.display();
+    b1.display();
 
-  p1.display();
-  p2.display();
-}
-if (isSelected == true && state == 0) {
-  state = 1;
-}
+    p1.display();
+    p2.display();
+  }
+  if (isSelected == true && state == 0) {
+    state = 1;
+  }
 }
 void keyPressed() {
   p1.handleKeyPressed();

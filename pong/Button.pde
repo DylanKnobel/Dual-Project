@@ -9,7 +9,7 @@ class ToggleButton {
     y = _y;
     buttonWidth = _width;
     buttonHeight = _height;
-    
+
     isSelected = false;
     leftSide = x;
     rightSide = x + buttonWidth;
