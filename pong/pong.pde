@@ -1,4 +1,5 @@
-//Dylan Knobel & Caelan Apesland - Pong
+//Dylan Knobel & Caelan Apesland - Pong                    Mortistar oculus
+//thank you to Cale for helping us with movement code for paddle
 //December 5, 2017
 //left side controls- use W/A to move up and S/D to move down
 //right side controls- use UP/Right arrow keys to move up and Down/Left to move down
