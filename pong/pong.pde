@@ -1,10 +1,11 @@
-//Dylan Knobel & Caelan Apesland - Pong                    Mortistar oculus
+//Dylan Knobel & Caelan Apesland - Pong
 //thank you to Cale for helping us with movement code for paddle
 //December 5, 2017
 //left side controls- use W/A to move up and S/D to move down
 //right side controls- use UP/Right arrow keys to move up and Down/Left to move down
 //Bugs in the code- collision problems with paddles and ball 
 //Bugs in the code- speed control problem so when it speeds up after each sucsesful hit wont stop speeding up when bounces off of paddle
+//hopes to add some sort of music
 
 //global varaibles
 Ball b1;

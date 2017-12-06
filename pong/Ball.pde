@@ -76,8 +76,8 @@ class Ball {
     if (distanceBetweenObjects <= block) { //collision with paddle!
       if ( (y+radius >= firstPaddle.paddleHeight) || (y - radius < 0) ) {
         if (dx <= 25 || dy <= 25 || dx >= -25 || dy >=- 25) {
-          dx *= 1.5;
-          dy *= 1.5;
+          dx *= 1.05;
+          dy *= 1.05;
           println(dx, dy);
         } else if (dx >= 25 && dy >= 25 || dx <= -25 && dy <= -25) {
           dx*=1;
